@@ -44,6 +44,7 @@ public class FileService {
     }
     public Resource downloadFile(String fileName) {
         Path filePath = Paths.get(uploadLocation).toAbsolutePath().resolve(fileName);
+        System.out.println(filePath.toUri());
         Resource resource;
         try {
             resource = new UrlResource(filePath.toUri());
