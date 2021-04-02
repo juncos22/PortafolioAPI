@@ -1,6 +1,7 @@
 package dev.nicolas.portafolioapi.controllers;
 
 import dev.nicolas.portafolioapi.services.FileService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -16,6 +17,7 @@ import java.io.IOException;
 public class FileController {
     private final FileService fileService;
 
+    @Autowired
     public FileController(FileService fileService) {
         this.fileService = fileService;
     }
