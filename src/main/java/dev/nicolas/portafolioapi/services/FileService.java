@@ -19,7 +19,6 @@ import java.nio.file.StandardCopyOption;
 public class FileService {
     private final String uploadLocation;
     private final Path uploadPath;
-
     @Autowired
     public FileService(@Value("${file.storage.location}") String uploadLocation) {
         this.uploadLocation = uploadLocation;

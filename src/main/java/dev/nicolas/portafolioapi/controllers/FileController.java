@@ -6,14 +6,16 @@ import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@RestController
+@Controller
 public class FileController {
     private final FileService fileService;
 
@@ -23,6 +25,7 @@ public class FileController {
     }
 
     @GetMapping("/thumbnail/{fileName}")
+    @ResponseBody
     public ResponseEntity<Resource> downloadThumbnail(@PathVariable("fileName") String fileName,
                                                       HttpServletRequest request) {
 
