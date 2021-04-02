@@ -48,6 +48,8 @@ public class FileService {
         Resource resource;
         try {
             resource = new UrlResource(filePath.toUri());
+            System.out.println("Resource Exists: "+resource.exists());
+            System.out.println("Resource Is Readable: "+resource.isReadable());
         } catch (MalformedURLException e) {
             throw new RuntimeException("Issue reading the file", e);
         }
