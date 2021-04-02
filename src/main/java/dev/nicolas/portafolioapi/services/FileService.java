@@ -52,7 +52,8 @@ public class FileService {
         }
         if (resource.exists() && resource.isReadable()) {
             return resource;
+        }else {
+            throw new RuntimeException("The file doesn't exists or isn't readable");
         }
-        throw new RuntimeException("The file doesn't exists or isn't readable");
     }
 }
